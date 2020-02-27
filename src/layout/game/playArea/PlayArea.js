@@ -35,16 +35,7 @@ const PlayArea = () => {
 			indexArray.push(index);
 
 			// create game element
-			return (
-				<GameItem
-					key={index}
-					fields={playArea}
-					index={index}
-					field={field}
-					increaseCount={increaseCount}
-					forwardRef={references[index]}
-				/>
-			);
+			return <GameItem key={index} field={field} increaseCount={increaseCount} forwardRef={references[index]} />;
 		});
 	};
 	delay && setEmptyBoard();

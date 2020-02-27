@@ -10,12 +10,12 @@ const GameBoard = () => {
 	const { gameState, error } = useContext(GameContext);
 	const { currentWinner } = useContext(UserContext);
 
-	const MSG = <Message type={gameState} currentWinner={currentWinner} error={error} />;
+	// const MSG =
 
 	return (
 		<div className="GameBoard">
 			<NavButtons />
-			{MSG}
+			<Message type={gameState} currentWinner={currentWinner} error={error} />
 			<PlayArea />
 		</div>
 	);
