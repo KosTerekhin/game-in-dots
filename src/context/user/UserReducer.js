@@ -37,6 +37,26 @@ export default (state, action) => {
 				currentWinner: action.payload.name,
 				allPlayers: [ ...state.allPlayers, action.payload ]
 			};
+
+		case 'SERVER_UPDATED': {
+			return {
+				...state,
+				serverMsg: 'SUCCESS - results posted to the server'
+			};
+		}
+		case 'SERVER_REJECTED': {
+			return {
+				...state,
+				serverMsg: 'ERROR - did not post results'
+			};
+		}
+
+		case 'CLEAR_MESSAGE': {
+			return {
+				...state,
+				serverMsg: null
+			};
+		}
 		default:
 			return state;
 	}

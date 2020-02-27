@@ -11,7 +11,8 @@ const UserState = (props) => {
 			startTime: null
 		},
 		currentWinner: '',
-		allPlayers: []
+		allPlayers: [],
+		serverMsg: null
 	};
 
 	const [ state, dispatch ] = useReducer(UserReducer, initialState);
@@ -41,7 +42,27 @@ const UserState = (props) => {
 
 		try {
 			await Axios.post(`${serverProxy}/winners`, newWinner);
+
+			dispatch({
+				type: 'SERVER_UPDATED'
+			});
+
+			setTimeout(() => {
+				dispatch({
+					type: 'CLEAR_MESSAGE'
+				});
+			}, 2000);
 		} catch (error) {
+			dispatch({
+				type: 'SERVER_REJECTED'
+			});
+
+			setTimeout(() => {
+				dispatch({
+					type: 'CLEAR_MESSAGE'
+				});
+			}, 2000);
+
 			throw error;
 		}
 	};
@@ -67,6 +88,7 @@ const UserState = (props) => {
 				allUsers: state.allUsers,
 				allPlayers: state.allPlayers,
 				currentWinner: state.currentWinner,
+				serverMsg: state.serverMsg,
 				setUser,
 				postWinner,
 				setStartTime
