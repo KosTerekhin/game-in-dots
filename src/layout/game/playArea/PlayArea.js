@@ -72,7 +72,7 @@ const PlayArea = () => {
 					itemClass.add('red');
 					increaseCount('red');
 				}
-			}, 1000);
+			}, delay);
 		} else return;
 	};
 
