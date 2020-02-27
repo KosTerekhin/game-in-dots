@@ -1,0 +1,17 @@
+.App {
+	display: flex;
+	width: 100%;
+	height: 100vh;
+
+	@media only screen and (max-width: 767px) {
+		flex-direction: column;
+	}
+}
+
+
+@import './leaderBoard/wrap';
+@import './gameBoard/wrap';
+@import './gameBoard/game/game';
+@import './gameBoard/message/message';
+@import './gameBoard/nav/navBar';
+@import './spinner/spinner';

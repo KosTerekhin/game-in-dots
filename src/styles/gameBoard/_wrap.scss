@@ -1,0 +1,35 @@
+.GameBoard {
+    position: relative;
+    border: 2px solid rgb(63, 62, 62);
+    border-right: 0;
+	display: flex;
+	flex-basis: 50%;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+
+	padding-top: 100px;
+    padding-bottom: 300px;
+
+
+    @media only screen and (max-width: 1025px) {
+		padding: 0;
+    }
+    
+    @media only screen and (max-width: 767px) {
+        border: none;
+        padding-top: 50px;
+    }
+    
+    >div{
+        margin-bottom: 20px;
+    }
+
+    button{
+        white-space: nowrap;
+
+        @media only screen and (max-width: 1025px) {
+            width: 100%;
+        }
+    }
+}
