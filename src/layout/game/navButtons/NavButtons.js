@@ -60,7 +60,7 @@ const NavButtons = () => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
-		if (params.name === '') {
+		if (params.name.trim() === '') {
 			setNameError();
 		} else {
 			playButton();
